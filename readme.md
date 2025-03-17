@@ -52,3 +52,8 @@ Mission aborted. ○
 ## License
 
 MIT
+
+TODO: 
+- When a mission is active, typing something besides the commands verifies that you're changing the mission
+- Make the theme red/green like TDD
+- Make more TODOs
