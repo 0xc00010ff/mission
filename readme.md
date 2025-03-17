@@ -1,12 +1,12 @@
 # mission
 
-A minimalist todo manager for developers who context-switch between projects.
+Do what you said you would.
 
 `mission` keeps track of the **one thing** you should be focusing on in your current project directory. It's a single-line todo list for multitaskers who need clarity in chaos.
 
 ## Why mission?
 
-When you're juggling multiple projects, remembering where you left off in each is challenging. `mission` solves this by maintaining a separate todo for each directory, helping you quickly re-orient yourself when you return to a project.
+If you're like me, you have a bunch of different projects that you're messing with at any given time. This is a simple tool that lets you create a single todo for each project directory, recall what you were doing, then mark it as complete, or commit the todo to git. You know TDD? It like that, but for *you*. 
 
 ## Installation
 
@@ -20,19 +20,19 @@ sudo make install
 
 ```bash
 # Set your current focus
-mission implementing user profile picture upload
+mission user can add widget to widgetgraph
 
 # Check what you're supposed to be doing
 mission
-◆  implementing user profile picture upload
+◆ user can add widget to list
 
 # Mark as complete (with option to commit)
 mission complete
-✓  Mission accomplished: implementing user profile picture upload
+✓  Mission accomplished: user can add widget to list
 Commit this mission? [y/N]
 
 # Directly commit to git
-mission commit
+`mission commit`
 Committing to git...
 Committed successfully! ✓
 
