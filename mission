@@ -87,11 +87,10 @@ if [ "$1" = "--help" ] || [ "$1" = "-h" ] || [ "$1" = "help" ]; then
 fi
 
 if [ "$1" = "complete" ] || [ "$1" = "accomplished" ] || [ "$1" = "acc" ] || [ "$1" = "done" ]; then
-  if read_todo; then
+  if [ -f "$TODO_FILE" ]; then
     todo=$(cat "$TODO_FILE")
     echo -e "\n"
     echo -e "${GREEN}✓  Mission accomplished: ${WHITE}${todo}${RESET}"
-    echo -e "\n"
     prompt_for_commit
   else
     echo -e "\n"
@@ -107,9 +106,9 @@ if [ "$1" = "abort" ] || [ "$1" = "failed" ]; then
     todo=$(cat "$TODO_FILE")
     echo -e "\n"
     echo -e "${RED}Mission aborted:${RESET} ${todo}"
-    echo -e "\n"
     remove_todo
   else
+    echo -e "\n"
     echo -e "${DIM}No active mission to abort.${RESET}"
   fi
   exit 0
