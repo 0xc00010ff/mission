@@ -12,6 +12,7 @@ CYAN='\033[0;36m'
 BRIGHT_CYAN='\033[1;36m'
 GREEN='\033[0;32m'
 WHITE='\033[1;37m'
+RED='\033[31m'
 RESET='\033[0m'
 DIM='\033[2m'
 
@@ -57,16 +58,16 @@ function remove_todo {
 function prompt_for_commit {
   local todo=$(cat "$TODO_FILE")
   echo -e "${WHITE}Completed mission: ${GREEN}${todo}${RESET}"
-  echo -e "${WHITE}Commit this mission? [y/N]${RESET} "
+  echo -e "${WHITE}Commit this mission? [Y/n]${RESET} "
   read -n 1 -s response
   echo ""
   
   case "$response" in
-    y|Y|" ")
-      do_commit "$todo"
+    n|N|" ")
+      echo -e "${GREEN}Mission complete${RESET} ✓"
       ;;
     *)
-      echo -e "${GREEN}Mission completed!${RESET} ✓"
+      do_commit "$todo"
       ;;
   esac
 }
@@ -82,7 +83,7 @@ if [ "$1" = "--help" ] || [ "$1" = "-h" ] || [ "$1" = "help" ]; then
   exit 0
 fi
 
-if [ "$1" = "complete" ]; then
+if [ "$1" = "complete" ] || [ "$1" = "accomplished" ] || [ "$1" = "acc" ] || [ "$1" = "done" ]; then
   if read_todo; then
     local todo=$(cat "$TODO_FILE")
     echo -e "${GREEN}✓  Mission accomplished: ${WHITE}${todo}${RESET}"
@@ -94,9 +95,9 @@ if [ "$1" = "complete" ]; then
   exit 0
 fi
 
-if [ "$1" = "clear" ] || [ "$1" = "cancel" ]; then
+if [ "$1" = "abort" ] || [ "$1" = "failed" ]; then
   if [ -f "$TODO_FILE" ]; then
-    echo -e "${CYAN}Mission aborted.${RESET} ○"
+    echo -e "${RED}ｘ Mission aborted:${RESET} ${todo}"
     remove_todo
   else
     echo -e "${DIM}No active mission to clear.${RESET}"
