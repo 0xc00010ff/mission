@@ -97,6 +97,7 @@ fi
 
 if [ "$1" = "abort" ] || [ "$1" = "failed" ]; then
   if [ -f "$TODO_FILE" ]; then
+    local todo=$(cat "$TODO_FILE")
     echo -e "${RED}ｘ Mission aborted:${RESET} ${todo}"
     remove_todo
   else
