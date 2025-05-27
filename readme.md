@@ -57,7 +57,7 @@ Committed successfully! ✓ User can add widget to widgetlist
 ```bash
 > mission abort
 
-ｘ Mission aborted: User can add widget to widgetlist
+Mission aborted: User can add widget to widgetlist
 
 ```
 
