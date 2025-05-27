@@ -20,24 +20,27 @@ sudo make install
 
 ```bash
 # Set your current focus
-mission user can add widget to widgetgraph
+> mission user can add widget to widgetlist
+
+◇  user can add widget to widgetlist
 
 # Check what you're supposed to be doing
-mission
-◆ user can add widget to list
+> mission
+
+◆ user can add widget to widgetlist
 
 # Mark as complete (with option to commit)
-mission complete
-✓  Mission accomplished: user can add widget to list
-Commit this mission? [y/N]
+> mission complete
+✓  Mission accomplished: user can add widget to widgetlist
+Commit this mission? [Y/n]
 
 # Directly commit to git
-`mission commit`
+> mission commit
 Committing to git...
 Committed successfully! ✓
 
 # Clear without completing
-mission clear
+> mission abort
 Mission aborted. ○
 ```
 
@@ -56,4 +59,3 @@ MIT
 TODO: 
 - When a mission is active, typing something besides the commands verifies that you're changing the mission
 - Make the theme red/green like TDD
-- Make more TODOs
