@@ -3,7 +3,7 @@
 # │ mission - one thing at a time            │
 # └──────────────────────────────────────────┘
 
-VERSION="1.0.0"
+VERSION="1.0.1"
 TODO_DIR="${HOME}/.config/mission"
 TODO_FILE="${TODO_DIR}/$(basename $(pwd))"
 
@@ -29,8 +29,8 @@ function show_help {
   echo -e "  mission [your task]      ${DIM}Set your current mission${RESET}"
   echo -e "  mission                  ${DIM}Show your current mission${RESET}"
   echo -e "  mission complete         ${DIM}Complete your mission with option to commit${RESET}"
-  echo -e "  mission clear            ${DIM}Clear your mission without completing${RESET}"
   echo -e "  mission commit           ${DIM}Commit your mission to git${RESET}"
+  echo -e "  mission abort            ${DIM}Clear your mission without completing${RESET}"
   echo -e "  mission --help           ${DIM}Show this help message${RESET}"
 }
 
@@ -100,7 +100,7 @@ if [ "$1" = "abort" ] || [ "$1" = "failed" ]; then
     echo -e "${RED}ｘ Mission aborted:${RESET} ${todo}"
     remove_todo
   else
-    echo -e "${DIM}No active mission to clear.${RESET}"
+    echo -e "${DIM}No active mission to abort.${RESET}"
   fi
   exit 0
 fi
