@@ -57,16 +57,13 @@ function remove_todo {
 
 function prompt_for_commit {
   local todo=$(cat "$TODO_FILE")
-  echo -e "${WHITE}Completed mission: ${GREEN}${todo}${RESET}"
   echo -e "${WHITE}Commit this mission? [Y/n]${RESET} "
   read -n 1 -s response
   echo ""
   
   case "$response" in
     n|N|" ")
-      echo -e "\n"
-      echo -e "${GREEN}Mission complete${RESET} ✓"
-      echo -e "\n"
+      echo -e "No commit"
       ;;
     *)
       do_commit "$todo"
