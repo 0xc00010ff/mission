@@ -13,7 +13,7 @@ If you're like me, you have a bunch of different projects that you're messing wi
 ```bash
 git clone https://github.com/yourusername/mission.git
 cd mission
-sudo make install
+make install
 ```
 
 ## Usage
