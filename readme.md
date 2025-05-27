@@ -6,7 +6,7 @@ Do what you said you would.
 
 ## Why mission?
 
-If you're like me, you have a bunch of different projects that you're messing with at any given time. This is a simple tool that lets you create a single todo for each project directory, recall what you were doing, then mark it as complete, or commit the todo to git. You know TDD? It like that, but for *you*. 
+If you're like me, you have a bunch of different projects that you're messing with at any given time. This is a simple tool that lets you create a single todo for each project directory, recall what you were doing, then mark it as complete, or commit the todo to git. You know TDD? It's like that, but for your brain. 
 
 ## Installation
 
@@ -18,30 +18,47 @@ sudo make install
 
 ## Usage
 
+### Set the mission
+Recommendation: Use a title for the hypothetical commit that accomplishes the mission. 
+
 ```bash
-# Set your current focus
-> mission user can add widget to widgetlist
+> mission User can add widget to widgetlist
 
-◇  user can add widget to widgetlist
+◇  User can add widget to widgetlist
 
-# Check what you're supposed to be doing
+```
+
+### Check what you're supposed to be doing
+```bash
 > mission
 
-◆ user can add widget to widgetlist
+◆ User can add widget to widgetlist
 
-# Mark as complete (with option to commit)
+```
+
+### Complete the mission
+
+```bash
 > mission complete
-✓  Mission accomplished: user can add widget to widgetlist
+
+✓  Mission accomplished: User can add widget to widgetlist
 Commit this mission? [Y/n]
+```
 
-# Directly commit to git
+###  Directly commit to git
+```bash
 > mission commit
-Committing to git...
-Committed successfully! ✓
 
-# Clear without completing
+Committing to git...
+Committed successfully! ✓ User can add widget to widgetlist
+```
+
+### Clear without completing
+```bash
 > mission abort
-Mission aborted. ○
+
+ｘ Mission aborted: User can add widget to widgetlist
+
 ```
 
 ## Features
