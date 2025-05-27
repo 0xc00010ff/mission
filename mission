@@ -86,13 +86,11 @@ fi
 if [ "$1" = "complete" ] || [ "$1" = "accomplished" ] || [ "$1" = "acc" ] || [ "$1" = "done" ]; then
   if [ -f "$TODO_FILE" ]; then
     todo=$(cat "$TODO_FILE")
-    echo -e "\n"
     echo -e "${GREEN}✓  Mission accomplished: ${WHITE}${todo}${RESET}"
     prompt_for_commit
   else
     echo -e "\n"
     echo -e "${DIM}No active mission to complete.${RESET}"
-    echo -e "\n"
   fi
   remove_todo
   exit 0
